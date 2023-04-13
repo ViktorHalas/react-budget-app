@@ -7,8 +7,8 @@ export const ExpenseList = () => {
   const {expenses} = useExpensesContext();
   return (
     <StyledExpenseList>
-      {expenses.map((expense) =>{
-        return <ExpenseItem expense={expense}></ExpenseItem>;
+      {expenses.map(({name, cost, id}) =>{
+        return <ExpenseItem key={id} name={name} cost={cost} id={id}></ExpenseItem>;
       })}
     </StyledExpenseList>
   );

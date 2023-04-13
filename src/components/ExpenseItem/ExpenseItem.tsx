@@ -1,17 +1,19 @@
 import React from "react";
-import { Expense, useExpensesContext } from "../../context/ExpensesContext/ExpensesContext";
+import { useExpensesContext } from "../../context/ExpensesContext/ExpensesContext";
 
 interface ExpenseItemProps {
-    expense : Expense
-}
+  id: string,
+  name: string,
+  cost: number,
+};
 
-export const ExpenseItem = ({expense} : ExpenseItemProps) => {
+export const ExpenseItem = ({name, cost, id} : ExpenseItemProps) => {
   const { deleteExpense} = useExpensesContext();
   return (
     <>
-      <div>{expense.name}</div>
-      <div>{expense.cost}</div>
-      <button onClick={() => deleteExpense(expense.id)}></button>
+      <div>{name}</div>
+      <div>{cost}</div>
+      <button onClick={() => deleteExpense(id)}></button>
     </>
   );
 };
