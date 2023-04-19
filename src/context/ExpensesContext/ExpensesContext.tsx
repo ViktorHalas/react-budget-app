@@ -18,7 +18,7 @@ interface ExpensesContextProviderProps {
 
 export const ExpensesContext = createContext<ExpensesContextState>({} as ExpensesContextState);
 
-const UseExpensesContextValue = () =>{
+const useExpensesContextValue = () =>{
   const [expensesValue, setExpensesContextValue] = useState<ExpensesContextState>(() =>{
     return {
       expenses: [],
@@ -40,7 +40,7 @@ const UseExpensesContextValue = () =>{
 export const useExpensesContext = () => useContext(ExpensesContext);
 
 export const ExpensesContextProvider = ({children}: ExpensesContextProviderProps) => {
-  return <ExpensesContext.Provider value ={UseExpensesContextValue()}>
+  return <ExpensesContext.Provider value ={useExpensesContextValue()}>
     {children}
   </ExpensesContext.Provider>;
 };

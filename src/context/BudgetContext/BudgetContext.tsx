@@ -2,7 +2,7 @@ import React, { createContext,ReactNode, useContext, useState } from "react";
 
 interface BudgetContextState {
   budget: number;
-  saveBudget: (budget: string) => void;
+  saveBudget: (budget: number) => void;
 }
 
 interface BudgetContextProviderProps {
@@ -16,7 +16,7 @@ export const useBudgetContextValue = () => {
     return {
       budget: 0,
       saveBudget: (budget) => {
-        setBudgetContextValue((context) => ({ ...context, budget: Number(budget) }));
+        setBudgetContextValue((context) => ({ ...context, budget }));
       },
     };
   });

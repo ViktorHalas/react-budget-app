@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, StyledForm, StyledInputForm } from "./styled";
+import { Button, StyledForm, StyledInputForm } from "./styles";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useExpensesContext } from "../../context/ExpensesContext/ExpensesContext";
 import uuid from "react-uuid";
@@ -32,13 +32,15 @@ export const Form = () => {
         {...register("name",{
           required:"name is required",
           maxLength: { value: 15, message: "Maximum characters 15" },
+          pattern: /^[A-Za-z | А-Яа-я]+$/i,
         })}
       />
       {errors.name && <p>{errors.name.message}</p>}
       <StyledInputForm
-        type = "number"
+        type = "text"
         placeholder="Enter cost ..."
         {...register("cost",{
+          valueAsNumber: true,
           required:"cost is required",
           maxLength: { value: 5, message: "High price" },
         })}

@@ -3,6 +3,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { BudgetForm, Button, Input, StyledAviable, StyledText } from "./styles";
 import { useToggle } from "../../hooks/useToggle";
 import { useBudgetContext } from "../../context/BudgetContext/BudgetContext";
+import { useCurrencyContext } from "../../context/CurrencyContext/CurrencyContext";
 
 interface BudgetValues {
   budgetValue: number;
@@ -17,12 +18,13 @@ export const Aviable = () => {
     reset();
     setIsChanged();
   };
+  const {currencyValue} = useCurrencyContext();
   return (
     <StyledAviable>
       {isChanged
         ?<>
           <StyledText>
-              Budget: ${budget}
+              Budget: {currencyValue}{budget}
           </StyledText>
           <Button onClick={setIsChanged}>Edit</Button>
         </>

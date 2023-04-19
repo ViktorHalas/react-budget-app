@@ -1,7 +1,7 @@
 import React from "react";
 import { ExpenseItem } from "../ExpenseItem/ExpenseItem";
 import { useExpensesContext } from "../../context/ExpensesContext/ExpensesContext";
-import { StyledExpenseList } from "./styled";
+import { StyledExpenseList } from "./styles";
 
 export const ExpenseList = () => {
   const {expenses} = useExpensesContext();
