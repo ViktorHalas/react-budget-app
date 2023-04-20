@@ -9,7 +9,7 @@ export const Budget = () => {
   return (
     <>
       <Header>
-        <Title/>
+        <Title>Budget App</Title>
         <CurrencySelect/>
       </Header>
       <CardGroup>
