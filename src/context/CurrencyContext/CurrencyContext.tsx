@@ -1,11 +1,7 @@
 import { Currency } from "config";
 import { ReactNode, createContext, useContext, useState } from "react";
 import { SingleValue } from "react-select";
-
-export interface OptionProps {
-  readonly value: string;
-  readonly label: string;
-}
+import { OptionProps } from "types";
 
 export const options: OptionProps[] = [
   { value: Currency.USD, label: "USD" },

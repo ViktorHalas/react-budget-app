@@ -2,7 +2,7 @@ import React from "react";
 import { Button, FormContainer, FormTitle, StyledForm, StyledInputForm } from "./styles";
 import { SubmitHandler, useForm } from "react-hook-form";
 import uuid from "react-uuid";
-import { useExpensesContext } from "context";
+import { useBudgetContext, useExpensesContext } from "context";
 
 interface FormValues {
     name:string;
@@ -10,6 +10,7 @@ interface FormValues {
 }
 
 export const Form = () => {
+  const { budget } = useBudgetContext();
   const {
     register,
     handleSubmit,
@@ -18,8 +19,10 @@ export const Form = () => {
   } = useForm<FormValues>({mode: "onSubmit"});
   const { addExpense } = useExpensesContext();
   const onSubmit: SubmitHandler<FormValues> = (expenses) => {
-    addExpense({ ...expenses, id: uuid() });
-    reset();
+    if (budget > 0){
+      addExpense({ ...expenses, id: uuid() });
+      reset();
+    }
   };
 
   return (
@@ -44,7 +47,7 @@ export const Form = () => {
           {...register("cost",{
             required:"cost is required",
             maxLength: { value: 5, message: "High price" },
-            pattern: {value: /\d+(\.\d{2})?/i, message: "Only number above 0"}
+            pattern: {value: /^[1-9]\d*|0$/, message: "Only number above 0"}
           })}
         />
         {errors.cost && <p style={{ color: "red" }}>{errors.cost.message}</p>}

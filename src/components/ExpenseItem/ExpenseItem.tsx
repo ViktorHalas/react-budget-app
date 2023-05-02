@@ -1,14 +1,9 @@
 import React from "react";
 import { Button, Cost, CostGroup, ExpenseItemContainer, Name } from "./styles";
 import { useCurrencyContext, useExpensesContext } from "context";
+import { Expense } from "types";
 
-interface ExpenseItemProps {
-  id: string,
-  name: string,
-  cost: string,
-};
-
-export const ExpenseItem = ({name, cost, id} : ExpenseItemProps) => {
+export const ExpenseItem = ({name, cost, id} : Expense) => {
   const { deleteExpense} = useExpensesContext();
   const {currencyValue} = useCurrencyContext();
   return (

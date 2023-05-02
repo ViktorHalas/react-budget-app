@@ -14,9 +14,11 @@ export const Aviable = () => {
   const [isChanged, setIsChanged] = useToggle();
   const { register, handleSubmit, reset } = useForm<BudgetValues>();
   const onSubmit: SubmitHandler<BudgetValues> = ({ budgetValue }) => {
-    saveBudget(budgetValue);
-    reset();
-    setIsChanged();
+    if(budgetValue > 0){
+      saveBudget(budgetValue);
+      reset();
+      setIsChanged();
+    }
   };
   const {currencyValue} = useCurrencyContext();
   return (

@@ -1,10 +1,5 @@
 import React, { createContext,ReactNode, useContext, useState } from "react";
-
-export interface Expense {
-  id: string,
-  name: string,
-  cost: string,
-}
+import { Expense } from "types";
 
 interface ExpensesContextState {
   expenses: Expense[],
