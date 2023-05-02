@@ -4,7 +4,7 @@ This project built with React.
 
 ## Overview
 
-![Overview](https://github.com/ViktorHalas/react-budget-app/blob/main/overview/react-budget-app.png).
+![Overview](https://github.com/ViktorHalas/react-budget-app/blob/main/overview/react-budget-app.PNG).
 
 ## Used technologies
 
