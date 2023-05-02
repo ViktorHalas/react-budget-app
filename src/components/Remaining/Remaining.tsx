@@ -20,7 +20,7 @@ export const Remaining = () => {
   }, [remaining]);
 
   useEffect(() => {
-    setRemaining(budget - expenses.reduce((spent, {cost}) => spent + cost, 0));
+    setRemaining(budget - expenses.reduce((spent, {cost}) => spent + Number(cost), 0));
   }, [expenses, budget]);
 
   return (

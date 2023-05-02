@@ -8,7 +8,7 @@ export const Spent = () => {
   const [spent, setSpent] = useState(0);
   const {currencyValue} = useCurrencyContext();
   useEffect(() => {
-    setSpent(expenses.reduce((spent, {cost}) => spent + cost, 0));
+    setSpent(expenses.reduce((spent, {cost}) => spent + Number(cost), 0));
   }, [expenses]);
   return (
     <StyledSpent>Spent so far: {currencyValue}{spent}</StyledSpent>

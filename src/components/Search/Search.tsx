@@ -7,5 +7,8 @@ interface SearchProps {
 }
 
 export const Search = ({ expensesCallBack, placeholder }: SearchProps) => {
-  return <StyledSearch placeholder={placeholder} onChange={expensesCallBack}></StyledSearch>;
+  return <StyledSearch
+    placeholder={placeholder} 
+    onChange={expensesCallBack}>
+  </StyledSearch>;
 };

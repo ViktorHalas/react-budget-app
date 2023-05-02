@@ -6,7 +6,7 @@ import uuid from "react-uuid";
 
 interface FormValues {
     name:string;
-    cost:number;
+    cost:string;
 }
 
 export const Form = () => {
@@ -34,20 +34,20 @@ export const Form = () => {
           {...register("name",{
             required:"name is required",
             maxLength: { value: 15, message: "Maximum characters 15" },
-            pattern: /^[A-Za-z | А-Яа-я]+$/i,
+            pattern: {value: /^[A-Za-z | А-Яа-я]+$/i, message: "Only letters"},
           })}
         />
-        {errors.name && <p>{errors.name.message}</p>}
+        {errors.name && <p style={{ color: "red" }}>{errors.name.message}</p>}
         <StyledInputForm
           type = "text"
           placeholder="Enter cost ..."
           {...register("cost",{
-            valueAsNumber: true,
             required:"cost is required",
             maxLength: { value: 5, message: "High price" },
+            pattern: {value: /\d+(\.\d{2})?/i, message: "Only numbers above 0"}
           })}
         />
-        {errors.cost && <p>{errors.cost.message}</p>}
+        {errors.cost && <p style={{ color: "red" }}>{errors.cost.message}</p>}
         <Button type = "submit">Done</Button>
       </StyledForm>
     </FormContainer>

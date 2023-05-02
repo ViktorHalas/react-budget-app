@@ -6,7 +6,7 @@ import { Button, Cost, CostGroup, ExpenseItemContainer, Name } from "./styles";
 interface ExpenseItemProps {
   id: string,
   name: string,
-  cost: number,
+  cost: string,
 };
 
 export const ExpenseItem = ({name, cost, id} : ExpenseItemProps) => {
