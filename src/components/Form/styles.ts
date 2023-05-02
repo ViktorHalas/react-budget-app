@@ -41,6 +41,7 @@ const Button = styled.button`
   border: none;
   border-radius: 10px;
   color: rgb(255, 255, 255);
+  cursor: pointer;
 `;
 
 export {FormContainer, FormTitle, StyledForm, StyledInputForm, Button};
