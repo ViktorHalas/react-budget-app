@@ -1,8 +1,6 @@
 import React from "react";
-import { Expenses } from "./components/Expenses/Expenses";
-import { Form } from "./components/Form/Form";
-import { Budget } from "./components/Budget/Budget";
 import { StyledContainer } from "./styles";
+import { Budget, Expenses, Form } from "components";
 
 function App() {
   return (

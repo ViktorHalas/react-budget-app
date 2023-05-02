@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useBudgetContext } from "../../context/BudgetContext/BudgetContext";
-import { useExpensesContext } from "../../context/ExpensesContext/ExpensesContext";
 import { Overspending, StyledRemaining } from "./styles";
-import { useCurrencyContext } from "../../context/CurrencyContext/CurrencyContext";
+import { useBudgetContext, useCurrencyContext, useExpensesContext } from "context";
 
 export const Remaining = () => {
   const { expenses } = useExpensesContext();

@@ -1,6 +1,6 @@
+import { Currency } from "config";
 import { ReactNode, createContext, useContext, useState } from "react";
 import { SingleValue } from "react-select";
-import { Currency } from "../../config/currency";
 
 export interface OptionProps {
   readonly value: string;

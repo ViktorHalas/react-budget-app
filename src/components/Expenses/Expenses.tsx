@@ -1,6 +1,6 @@
 import React from "react";
-import { ExpenseList } from "../ExpenseList/ExpenseList";
 import { ExpenseTitle, StyledExpense } from "./styles";
+import { ExpenseList } from "components";
 
 export const Expenses = () => {
 

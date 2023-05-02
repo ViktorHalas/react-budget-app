@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { ExpenseItem } from "../ExpenseItem/ExpenseItem";
-import { useExpensesContext } from "../../context/ExpensesContext/ExpensesContext";
 import { StyledExpenseList } from "./styles";
-import { useDebounce } from "../../hooks/useDebounce";
-import { Search } from "../Search/Search";
+import { ExpenseItem, Search } from "components";
+import { useExpensesContext } from "context";
+import { useDebounce } from "hooks";
 
 export const ExpenseList = () => {
   const {expenses} = useExpensesContext();

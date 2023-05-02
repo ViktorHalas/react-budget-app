@@ -1,8 +1,8 @@
 import React from "react";
 import { Button, FormContainer, FormTitle, StyledForm, StyledInputForm } from "./styles";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { useExpensesContext } from "../../context/ExpensesContext/ExpensesContext";
 import uuid from "react-uuid";
+import { useExpensesContext } from "context";
 
 interface FormValues {
     name:string;
@@ -44,7 +44,7 @@ export const Form = () => {
           {...register("cost",{
             required:"cost is required",
             maxLength: { value: 5, message: "High price" },
-            pattern: {value: /\d+(\.\d{2})?/i, message: "Only numbers above 0"}
+            pattern: {value: /\d+(\.\d{2})?/i, message: "Only number above 0"}
           })}
         />
         {errors.cost && <p style={{ color: "red" }}>{errors.cost.message}</p>}

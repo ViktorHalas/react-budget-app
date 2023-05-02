@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useExpensesContext } from "../../context/ExpensesContext/ExpensesContext";
 import { StyledSpent } from "./styles";
-import { useCurrencyContext } from "../../context/CurrencyContext/CurrencyContext";
+import { useCurrencyContext, useExpensesContext } from "context";
 
 export const Spent = () => {
   const { expenses } = useExpensesContext();

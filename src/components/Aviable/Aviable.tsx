@@ -1,9 +1,9 @@
 import React from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { BudgetForm, Button, Input, StyledAviable, StyledText } from "./styles";
-import { useToggle } from "../../hooks/useToggle";
-import { useBudgetContext } from "../../context/BudgetContext/BudgetContext";
-import { useCurrencyContext } from "../../context/CurrencyContext/CurrencyContext";
+import { useBudgetContext, useCurrencyContext } from "context";
+import { useToggle } from "hooks";
+
 
 interface BudgetValues {
   budgetValue: number;

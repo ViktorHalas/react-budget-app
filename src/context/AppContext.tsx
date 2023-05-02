@@ -1,9 +1,5 @@
+import { BudgetContextProvider, CurrencyContextProvider, ExpensesContextProvider } from "context";
 import React, { FunctionComponent, ReactNode } from "react";
-import { BudgetContextProvider } from "./BudgetContext/BudgetContext";
-import { CurrencyContextProvider } from "./CurrencyContext/CurrencyContext";
-import { ExpensesContextProvider } from "./ExpensesContext/ExpensesContext";
-
-
 
 interface ChildrenProps {
   children: ReactNode;

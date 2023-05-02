@@ -1,7 +1,6 @@
 import React from "react";
-import { useExpensesContext } from "../../context/ExpensesContext/ExpensesContext";
-import { useCurrencyContext } from "../../context/CurrencyContext/CurrencyContext";
 import { Button, Cost, CostGroup, ExpenseItemContainer, Name } from "./styles";
+import { useCurrencyContext, useExpensesContext } from "context";
 
 interface ExpenseItemProps {
   id: string,
